@@ -41,12 +41,12 @@ class LoginController extends Controller
     /**
      * Define redirect after login according role
      */
-    public function redirectTo(){
-        if(Auth::user()->hasRole('admin')){
+    public function redirectTo()
+    {
+        if (Auth::user()->hasRole('admin')) {
             return route('admin');
         }
 
         return route('user');
     }
-
 }

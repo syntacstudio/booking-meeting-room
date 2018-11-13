@@ -14,14 +14,14 @@ class RolesTableSeeder extends Seeder
     {
         // create role admin
         Role::create([
-        	'name' => 'admin',
-        	'description' => 'the god of the entire system'
+            'name' => 'admin',
+            'description' => 'the god of the entire system'
         ]);
 
         // create role user
         Role::create([
-        	'name' => 'user',
-        	'description' => 'They`ll only have limited access'
+            'name' => 'user',
+            'description' => 'They`ll only have limited access'
         ]);
     }
 }
