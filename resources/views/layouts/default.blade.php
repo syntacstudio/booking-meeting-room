@@ -26,7 +26,7 @@
                             <a class="nav-link {{ active_nav('home') }}" href="{{ route('home') }}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ active_nav('home') }}" href="{{ route('home') }}">EXPLORE</a>
+                            <a class="nav-link {{ active_nav('browse') }}" href="{{ route('browse') }}">BROWSE ROOMS</a>
                         </li>
                         @guest
                             <li class="nav-item">
