@@ -13417,3 +13417,24 @@ a.text-dark:focus {
   padding: 0.55rem 0.75rem;
 }
 
+.search-hero {
+  padding: 8rem 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/images/search-bg.png");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/search-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+.search-hero h1 {
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#rooms-listing .card-img-top {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
