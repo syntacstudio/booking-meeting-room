@@ -11,9 +11,9 @@
 @import '~line-awesome/src/line-awesome';
 
 .navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  padding: 1.2rem 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    padding: 1.2rem 0;
 }
 
 .form-control {
@@ -33,4 +33,26 @@
 
 .btn {
 	padding: 0.55rem 0.75rem;
+}
+
+// search hero
+.search-hero {
+    padding: 8rem 0;
+    background: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('/images/search-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h1 {
+        color: var(--white);
+        text-shadow: 0 1px 3px rgba(0,0,0,.3);
+        text-align: center;
+    }
+}
+
+// rooms listing
+#rooms-listing {
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
 }
