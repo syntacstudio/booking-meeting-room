@@ -1,7 +1,10 @@
 <?php
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 });
+
+// routes of pages
+Route::get('/', 'PageController@welcome' )->name('home');
 
 Auth::routes();
 
@@ -13,9 +16,4 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 // routes for user
 Route::middleware(['auth', 'roles:user'])->group(function () {
     Route::get('/user', 'UserController@index')->name('user');
-});
-
-// routes for both roles
-Route::middleware(['auth', 'roles:admin,user'])->group(function () {
-    Route::get('/home', 'HomeController@index')->name('home');
 });
