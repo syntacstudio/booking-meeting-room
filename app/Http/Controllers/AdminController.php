@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Room;
 
 class AdminController extends Controller
 {
@@ -11,6 +12,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+    	$rooms = Room::get()->count();
+
+        return view('admin', compact('rooms'));
     }
 }
