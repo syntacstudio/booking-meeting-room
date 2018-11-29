@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('page.title')</title>
+    <title>@yield('page.title') • {{ config('app.name') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,11 +30,11 @@
                         </li>
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                <a class="nav-link {{ active_nav('login') }}" href="{{ route('login') }}">LOGIN</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {{ active_nav('register') }}">
                                 @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                    <a class="nav-link" href="{{ route('register') }}">REGISTER</a>
                                 @endif
                             </li>
                         @else
@@ -67,6 +67,22 @@
         <main>
             @yield('content')
         </main>
+
+        <footer class="border-top">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-inline">
+                           <li class="list-inline-item"><a class="text-dark" href="#">PRIVACY POLICY</a></li>
+                           <li class="list-inline-item"><a class="text-dark" href="#">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        Copyright © <a href="{{ config('app.url') }}">{{ config('app.name') }}</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
