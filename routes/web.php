@@ -5,6 +5,7 @@ Route::get('/', function() {
 
 // routes of pages
 Route::get('/', 'PageController@welcome' )->name('home');
+Route::get('/browse', 'PageController@browse' )->name('browse');
 
 Auth::routes();
 
