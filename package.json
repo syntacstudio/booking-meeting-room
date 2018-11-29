@@ -18,5 +18,7 @@
         "lodash": "^4.17.5",
         "popper.js": "^1.12"
     },
-    "dependencies": {}
+    "dependencies": {
+        "line-awesome": "^1.0.2"
+    }
 }
