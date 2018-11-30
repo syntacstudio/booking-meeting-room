@@ -13928,6 +13928,15 @@ module.exports = __webpack_require__(43);
 
 __webpack_require__(13);
 
+// open upload file when edit room
+$('input[name="edit_image"]').on('click', function () {
+    if ($(this).is(':checked')) {
+        $('#image_upload').slideDown();
+    } else {
+        $('#image_upload').slideUp();
+    }
+});
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
