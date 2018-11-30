@@ -13,7 +13,7 @@
                     <i class="fa fa-map-marker text-white fa-2x"></i>
                 </span>
                 <div>
-                    <p class="h5 m-0">{{ $rooms }} Rooms</p>
+                    <p class="h5 m-0">{{ $rooms }} Room{{ $rooms > 1 ? 's' : '' }}</p>
                     <small class="text-muted">Meeting room{{ $rooms > 1 ? 's' : '' }} listed</small>
                 </div>
                 </div>
@@ -37,8 +37,8 @@
                     <i class="fa fa-file-text text-white fa-2x"></i>
                 </span>
                 <div>
-                    <p class="h5 m-0">800 Bookings</p>
-                    <small class="text-muted">Bookings made this month.</small>
+                    <p class="h5 m-0">{{ $bookings }} Booking{{ $bookings > 1 ? 's' : '' }}</p>
+                    <small class="text-muted">Booking{{ $bookings > 1 ? 's' : '' }} made.</small>
                 </div>
                 </div>
             </div>
