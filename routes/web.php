@@ -5,7 +5,9 @@ Route::get('/', function() {
 
 // routes of pages
 Route::get('/', 'PageController@welcome' )->name('home');
-Route::get('/browse', 'PageController@browse' )->name('browse');
+Route::get('/browse', 'RoomController@browse' )->name('browse');
+Route::get('/room/{permalink}', 'RoomController@detail' )->name('room');
+Route::get('/booking/{permalink}', 'RoomController@booking' )->name('booking');
 
 Auth::routes();
 
