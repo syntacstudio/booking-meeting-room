@@ -32,7 +32,7 @@
                             <a class="nav-link {{ active_nav('admin.rooms') }}" href="{{ route('admin.rooms') }}">MANAGE ROOM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ active_nav('home') }}" href="{{ route('admin') }}">CUSTOMERS</a>
+                            <a class="nav-link {{ active_nav('admin.customers') }}" href="{{ route('admin.customers') }}">CUSTOMERS</a>
                         </li>
                     </ul>
 
@@ -68,6 +68,22 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="border-top bg-white">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-inline">
+                           <li class="list-inline-item"><a class="text-dark" href="#">PRIVACY POLICY</a></li>
+                           <li class="list-inline-item"><a class="text-dark" href="#">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        Copyright © <a href="{{ config('app.url') }}">{{ config('app.name') }}</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
