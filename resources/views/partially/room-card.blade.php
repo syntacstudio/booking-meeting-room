@@ -7,7 +7,7 @@
                 	<p class="text-muted">{{ $room->location }}</p>
 	                <p class="card-text">{{ str_limit($room->description, 135, ' ...') }}</p>
 	                <div class="d-flex justify-content-between align-items-center">
-	                	<span class="h4">${{ $room->price }} <span class="text-muted">/</span> Hour</span>
+	                	<span class="h4">${{ $room->price }} <span class="text-grey">/</span> Day</span>
 	                    <a href="{{ route('booking', $room->permalink) }}" class="btn btn-sm btn-outline-primary">Book Now!</a>
 	                </div>
                 </div>
