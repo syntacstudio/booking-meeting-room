@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Room;
+use Auth;
 
 class RoomController extends Controller
 {
@@ -32,8 +33,9 @@ class RoomController extends Controller
      */
     public function booking($permalink)
     {
-    	$data = Room::where('permalink', $permalink)->first();
+    	$data      = Room::where('permalink', $permalink)->first();
+        $customer  = Auth::user();
 
-    	return view('booking', compact('data'));
+    	return view('booking', compact('data', 'customer'));
     }
 }
