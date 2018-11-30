@@ -21,6 +21,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
     Route::get('/admin/room/{id}/edit/', 'Admin\RoomController@edit')->name('admin.room.edit');
     Route::get('/admin/room/{id}/destroy', 'Admin\RoomController@destroy')->name('admin.room.destroy');
 
+    Route::get('/admin/customers', 'Admin\CustomerController@index')->name('admin.customers');
+
     //post routes
     Route::post('/admin/room/{id}/update', 'Admin\RoomController@update')->name('admin.room.update');
     Route::post('/admin/room/store', 'Admin\RoomController@store')->name('admin.room.store');
