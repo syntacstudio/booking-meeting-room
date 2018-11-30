@@ -28,6 +28,6 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 });
 
 // routes for user
-Route::middleware(['auth', 'roles:user'])->group(function () {
-    Route::get('/user', 'UserController@index')->name('user');
+Route::middleware(['auth', 'roles:customer'])->group(function () {
+    Route::get('/account', 'AccountController@index')->name('account');
 });
