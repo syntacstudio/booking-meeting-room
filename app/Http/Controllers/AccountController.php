@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Booking;
 use Auth;
 
 class AccountController extends Controller
@@ -12,7 +13,10 @@ class AccountController extends Controller
      */
     public function index()
     {
-    	return view('account');
+    	$customer = Auth::user();
+    	$bookings = $customer->bookings;
+
+    	return view('account', compact('customer', 'bookings'));
     }
 
 }
