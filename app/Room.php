@@ -13,6 +13,22 @@ class Room extends Model
     protected $guarded = [];
 
     /**
+     * Eloquent with Booking
+     */
+    public function booking()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Eloquent one to many with Booking
+     */
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+    /**
      * @param $name
      * @param int $id
      * @return string
