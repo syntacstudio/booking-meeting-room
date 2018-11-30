@@ -17,14 +17,4 @@ class PageController extends Controller
 
     	return view('welcome', compact('rooms'));
     }
-
-    /**
-     * Browse page 
-     */
-    public function browse()
-    {
-    	$rooms = Room::paginate(12);
-
-    	return view('browse', compact('rooms'));
-    }
 }
