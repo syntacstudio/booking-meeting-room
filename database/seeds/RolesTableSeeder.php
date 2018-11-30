@@ -18,9 +18,9 @@ class RolesTableSeeder extends Seeder
             'description' => 'the god of the entire system'
         ]);
 
-        // create role user
+        // create role customer
         Role::create([
-            'name' => 'user',
+            'name' => 'customer',
             'description' => 'They`ll only have limited access'
         ]);
     }

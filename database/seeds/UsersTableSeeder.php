@@ -16,10 +16,10 @@ class UsersTableSeeder extends Seeder
     {
         // Get role admin
         $role_admin = Role::where('name', 'admin')->first();
-        $role_user  = Role::where('name', 'user')->first();
+        $role_user  = Role::where('name', 'customer')->first();
 
         $admin = new User();
-        $admin->name = 'Administrator Sample';
+        $admin->name = 'Willy Arisky';
         $admin->email = 'admin@test.app';
         $admin->email_verified_at = Carbon::now();
         $admin->password = bcrypt('secret');
@@ -27,8 +27,8 @@ class UsersTableSeeder extends Seeder
         $admin->roles()->attach($role_admin);
 
         $user = new User();
-        $user->name = 'User Sample';
-        $user->email = 'user@test.app';
+        $user->name = 'Levim Rotem';
+        $user->email = 'customer@test.app';
         $user->email_verified_at = Carbon::now();
         $user->password = bcrypt('secret');
         $user->save();
