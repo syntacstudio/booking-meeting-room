@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="stripe" content="{{ env('STRIPE_KEY') }}">
     <title>@yield('page.title') • {{ config('app.name') }}</title>
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -50,9 +52,9 @@
                             </li>
                             <li class="nav-item dropdown">
                             @if (Auth::user()->hasRole('admin'))
-                                <a class="btn btn-primary ml-md-3" href="{{ route('admin') }}"><i class="fa fa-arrow-left"></i> Back to Admin</a>
+                                <a class="btn btn-outline-primary ml-md-3" href="{{ route('admin') }}"><i class="fa fa-arrow-left"></i> Back to Admin</a>
                             @else
-                                <a class="btn btn-primary ml-md-3" href="{{ route('account') }}"><i class="fa fa-user"></i> My Account</a>
+                                <a class="btn btn-outline-primary ml-md-3" href="{{ route('account') }}"><i class="fa fa-user"></i> My Account</a>
                             @endif
                             </li>
                         @endguest
