@@ -19,21 +19,31 @@
 .form-control {
     padding: 1.4rem 1rem !important;
     line-height: 1.8rem !important;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     border: solid 1px #dadada;
+}
+
+.custom-select {
+    border: solid 1px #dadada;
+    padding: 0.5rem 1rem !important;
+    height: 47px;
+}
+
+input[type="file"].form-control  {
+    height: 50px;
+    padding: 0.5rem 1rem !important;
+}
+
+textarea.form-control {
+    padding: 0.5rem 1rem !important;
 }
 
 .form-group {
     label {
     	font-weight: 600 !important;
-	    margin-bottom: 0px;
+	    margin-bottom: 3px;
     }
 }
 
-.btn {
-	padding: 0.55rem 0.75rem;
-}
 
 // search hero
 .search-hero {
@@ -54,6 +64,14 @@
 #rooms-listing {
     .card-img-top {
         height: 200px;
+        object-fit: cover;
+    }
+}
+
+// room detail
+#room-detail {
+    .img-thumbnail {
+        min-height: 300px;
         object-fit: cover;
     }
 }
