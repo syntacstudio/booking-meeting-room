@@ -12,18 +12,23 @@ class Booking extends Model
     protected $guarded = [];
 
     /**
+     * Register the field to date
+     */
+    protected $dates = ['start_date', 'end_date'];
+
+    /**
      * Eloquent one to one with room
      */
     public function room()
     {
-    	return $this->hasOne(Room::class);
+    	return $this->belongsTo(Room::class);
     }
 
-    /**
-     * Eloquent with User
+     /**
+     * Many to one relations with User
      */
     public function customer()
     {
-    	return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
