@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('page.title', 'Add new room')
+@section('page.title', 'Create meeting room')
 
 @section('content')
 <div class="container">
@@ -9,7 +9,7 @@
         		<a href="{{ route('admin.rooms') }}" class="btn btn-secondary btn-sm mr-md-2">
         			<i class="fa fa-arrow-left"></i> Back
         		</a>
-        		<span class="h5">Add new room</span>
+        		<span class="h5">Create meeting room</span>
         	</div>
             <div class="card">
                 <div class="card-body">

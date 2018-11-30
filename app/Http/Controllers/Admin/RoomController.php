@@ -20,19 +20,11 @@ class RoomController extends Controller
     }
 
     /**
-     * Detail room
+     * Create new meeting room
      */
-    public function detail($id)
+    public function create()
     {
-    	return view('admin.room.detail');
-    }
-
-    /**
-     * New room
-     */
-    public function new()
-    {
-    	return view('admin.room.new');
+    	return view('admin.room.create');
     }
 
     /**
