@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Room;
+use App\Booking;
 
 class AdminController extends Controller
 {
@@ -12,8 +13,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-    	$rooms = Room::get()->count();
+    	$rooms 		= Room::get()->count();
+    	$bookings 	= Booking::get()->count();
 
-        return view('admin', compact('rooms'));
+        return view('admin', compact('rooms', 'bookings'));
     }
 }
