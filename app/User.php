@@ -37,6 +37,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Eloquent with Booking
+     */
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+    /**
      * @param string|array $roles
      */
     public function authorizeRoles($roles)
