@@ -77,7 +77,7 @@ class BookingController extends Controller
 				'user_id' => $user->id,
 				'room_id' => $room->id,
 				'start_date' => Carbon::parse($request->date),
-				'end_date' => Carbon::parse($request->date)->addDays($request->day),
+				'end_date' => Carbon::parse($request->date)->addDays($request->day - 1),
 				'day' =>$request->day,
 				'total' => $room->price * $request->day,
 				'note' => $request->note
