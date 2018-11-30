@@ -38,24 +38,21 @@
                                 @endif
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                    LOGOUT <i class="fa fa-sign-out"></i>
+                                </a>
+                                <form id="logout-form" method="post" class="d-none" action="{{ route('logout') }}">
+                                    @csrf
+                                </form>
+                            </li>
                             <li class="nav-item dropdown">
                             @if (Auth::user()->hasRole('admin'))
                                 <a class="btn btn-primary ml-md-3" href="{{ route('admin') }}"><i class="fa fa-arrow-left"></i> Back to Admin</a>
                             @else
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <a class="btn btn-primary ml-md-3" href="{{ route('account') }}"><i class="fa fa-user"></i> My Account</a>
                             @endif
                             </li>
                         @endguest
