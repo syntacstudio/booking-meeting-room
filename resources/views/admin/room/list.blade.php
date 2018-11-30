@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
 	@include('partially.alerts.success')
-    <div class="h5 mb-3">
+    <div class="h5 mb-4 ">
     	Rooms List: 
     	<a class="btn btn-primary btn-sm float-right" href="{{ route('admin.room.new') }}">Add Room</a>
     </div>
@@ -27,8 +27,8 @@
     			<td>{{ $room->location }}</td>
     			<td>${{ $room->price }}</td>
     			<td class="text-right">
-    				<a href="#" class="btn btn-sm btn-secondary">Manage</a> 
-    				<a href="#" class="btn btn-sm btn-danger">Delete</a> 
+    				<a href="{{ route('admin.room.edit', ['id' => $room->id]) }}" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a> 
+    				<a onclick="return confirm('Are you sure?')" href="{{route('admin.room.destroy', $room->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a> 
     			</td>
     		</tr>
     		@endforeach
