@@ -47,6 +47,6 @@ class LoginController extends Controller
             return route('admin');
         }
 
-        return route('customer');
+        return route('account');
     }
 }
