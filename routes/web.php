@@ -7,7 +7,6 @@ Route::get('/', function() {
 Route::get('/', 'PageController@welcome' )->name('home');
 Route::get('/browse', 'RoomController@browse' )->name('browse');
 Route::get('/room/{permalink}', 'RoomController@detail' )->name('room');
-Route::get('/booking/{permalink}', 'RoomController@booking' )->name('booking');
 
 Auth::routes();
 
@@ -30,4 +29,6 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 // routes for user
 Route::middleware(['auth', 'roles:customer'])->group(function () {
     Route::get('/account', 'AccountController@index')->name('account');
+    
+    Route::get('/booking/{permalink}', 'RoomController@booking' )->name('booking');
 });
