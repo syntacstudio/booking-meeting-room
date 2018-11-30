@@ -25,8 +25,8 @@
                     <i class="fa fa-users text-white fa-2x"></i>
                 </span>
                 <div>
-                    <p class="h5 m-0">20 Members</p>
-                    <small class="text-muted">Members Registered</small>
+                    <p class="h5 m-0">{{ $customers }} Customer{{ $customers > 1 ? 's' : '' }}</p>
+                    <small class="text-muted">Customer{{ $customers > 1 ? 's' : '' }} Registered</small>
                 </div>
                 </div>
             </div>
