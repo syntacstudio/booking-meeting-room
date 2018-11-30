@@ -27,15 +27,4 @@ class RoomController extends Controller
 
     	return view('room', compact('data'));
     }
-
-    /**
-     * Booking meeting room
-     */
-    public function booking($permalink)
-    {
-    	$data      = Room::where('permalink', $permalink)->first();
-        $customer  = Auth::user();
-
-    	return view('booking', compact('data', 'customer'));
-    }
 }
