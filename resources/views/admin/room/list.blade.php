@@ -6,13 +6,13 @@
 	@include('partially.alerts.success')
     <div class="h5 mb-4 ">
     	Rooms List: 
-    	<a class="btn btn-primary btn-sm float-right" href="{{ route('admin.room.new') }}">Add Room</a>
+    	<a class="btn btn-primary btn-sm float-right" href="{{ route('admin.room.create') }}">Create Meeting Room</a>
     </div>
 
     <table class="table table-hover table-bordered">
     	<thead class="thead-light">
     		<tr>
-    			<th>ID</th>
+    			<th>#</th>
     			<th>Name</th>
     			<th>Location</th>
     			<th>Price</th>
@@ -22,7 +22,7 @@
     	<body>
     		@foreach($data as $key => $room)
     		<tr>
-    			<th>#{{ $room->id }}</th>
+    			<th>{{ $key+1 }}</th>
     			<td>{{ $room->name }}</td>
     			<td>{{ $room->location }}</td>
     			<td>${{ $room->price }}</td>
