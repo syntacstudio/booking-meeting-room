@@ -83,7 +83,7 @@ class BookingController extends Controller
 				'note' => $request->note
 			]);
 
-    		$response = [ 'status' => 'success', 'msg' => 'Thank you! Your payment has been successfully received.', 'data' => $booking ];
+    		$response = [ 'status' => 'success', 'msg' => 'Thank you! Your payment has been successfully received.', 'booking' => $booking ];
     	} catch(\Stripe\Error\Card $e) {
             $body = $e->getJsonBody();
             $errors[] = $body['error']['message'];
