@@ -137,4 +137,55 @@ $('#print-invoice button').click(function(e){
 	e.preventDefault();
 	$(this).hide();
 	window.print();
+});// change password
+const change_password = $('#change-password');
+
+$('#start-change-password').click(function(e){
+	$('#preview-password').hide();
+	$('#change-password').show();
+});
+
+$('#cancel-pwd').click(function(e){
+	clearFeedback();
+	$('#change-password').hide();
+	$('#preview-password').show();
+});
+
+change_password.submit(function(e){
+	e.preventDefault();
+	clearFeedback();
+	$('.loader').fadeIn();
+
+	$.ajax({
+		url: '/account/update/password',
+		type: 'POST',
+		dataType: 'JSON',
+		data: change_password.serialize(),
+	})
+	.done(function($data) {
+		if($data.errors){
+			$.each($data.errors, function(field, msg) {
+				pushFeedback(field, msg);
+			});
+		} else if($data.status == 'success'){
+			swal({
+			  title: 'Congratulation!',
+			  text: $data.msg,
+			  type: 'success',
+			  showCancelButton: false,
+			  confirmButtonColor: '#c61b1b'
+			}).then((result) => {
+				$('#change-password').hide();
+				$('#preview-password').show();
+				change_password[0].reset();
+			})
+		}
+	})
+	.fail(function() {
+		swal('Oops!', 'Failed to update your profile.', 'error');
+	})
+	.always(function() {
+		$('.loader').fadeOut(50);
+	});
+	
 });
