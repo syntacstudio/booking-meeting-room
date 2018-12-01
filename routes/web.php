@@ -3,10 +3,11 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-// routes of pages
+// routes for public
 Route::get('/', 'PageController@welcome' )->name('home');
 Route::get('/browse', 'RoomController@browse' )->name('browse');
 Route::get('/room/{permalink}', 'RoomController@detail' )->name('room');
+Route::get('/invoice/{number}', 'AccountController@invoice')->name('account.invoice');
 
 Auth::routes();
 
