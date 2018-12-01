@@ -77,6 +77,7 @@ booking_form.submit(function(e){
 	e.preventDefault();
 
 	clearFeedback();
+	clearAlert();
 	$('.loader').fadeIn();
 	$.ajax({
 		url: '/booking/validation',
@@ -104,10 +105,18 @@ booking_form.submit(function(e){
 			    		data: booking_form.serialize() + '&room='+ $data.room.id + '&stripeToken='+token.id
 			    	})
 			    	.done(function($data) {
-			    		console.log($data);
+		                if($data.errors) {
+		                    $.each( $data.errors, function( key, msg ) {
+		                    	pushAlert( 'danger', msg, 'booking-alert' );
+		                    });
+		                } else if($data.status == 'success') {
+		                    bookingConfirmed($data.booking);
+		                } else {
+		                    pushAlert( 'danger', 'System error, please try again later or contact us.', 'booking-alert' );
+		                }
 			    	})
 			    	.fail(function($data) {
-			    		console.log($data);
+			    		pushAlert( 'danger', 'System error, please try again later or contact us.', 'booking-alert' );
 			    	})
 			    	.always(function() {
 						$('.loader').fadeOut();
@@ -128,16 +137,20 @@ booking_form.submit(function(e){
 	})
 	.fail(function($data) {
 		$('.loader').fadeOut();
-		console.log($data);
+	}).
+	always(function(){
+		$('.loader').fadeOut();
 	});
 	
 });
 
+// print invoice
 $('#print-invoice button').click(function(e){
 	e.preventDefault();
 	$(this).hide();
 	window.print();
-});// change password
+});
+
 /**
  * Change profile
  */
@@ -232,3 +245,5 @@ change_password.submit(function(e){
 	});
 	
 });
+
+
