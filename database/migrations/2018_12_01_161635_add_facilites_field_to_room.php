@@ -14,7 +14,7 @@ class AddFacilitesFieldToRoom extends Migration
     public function up()
     {
         Schema::table('rooms', function($table) {
-            $table->string('chairs')->nullable();
+            $table->string('seats')->nullable();
             $table->string('wifi')->nullable();
             $table->string('ac')->nullable();
             $table->string('coffee')->nullable();
@@ -31,7 +31,7 @@ class AddFacilitesFieldToRoom extends Migration
     public function down()
     {
         Schema::table('rooms', function($table) {
-            $table->dropColumn('chairs');
+            $table->dropColumn('seats');
             $table->dropColumn('wifi');
             $table->dropColumn('ac');
             $table->dropColumn('coffee');

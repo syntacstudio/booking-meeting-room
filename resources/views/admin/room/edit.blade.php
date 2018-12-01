@@ -57,6 +57,92 @@
 				            @endif
 				        </div>
 
+
+
+				        <div class="form-group">
+				            <label for="seats">Number of seats</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-hotel"></i>
+							    </span>
+							  </div>
+							  <input type="number" id="seats" class="form-control" name="seats" value="{{ old('seats') ?? $data->seats }}" placeholder="Number of seats available">
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="wifi">Wi-Fi</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-wifi"></i>
+							    </span>
+							  </div>
+							  <input type="number" id="wifi" class="form-control" name="wifi" value="{{ old('wifi') ?? $data->wifi }}" placeholder="Leave it empty if false or input in Mbps">
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="ac">Air Conditioner</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-line-chart"></i>
+							    </span>
+							  </div>
+							  <select name="ac" class="form-control">
+							  	<option value="no" {{ $data->ac == 'no' ? 'selected' : '' }}>Not available</option>
+							  	<option value="yes" {{ $data->ac == 'yes' ? 'selected' : '' }}>Available</option>
+							  </select>
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="coffee">Coffee</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-coffee"></i>
+							    </span>
+							  </div>
+							  <select name="coffee" class="form-control">
+							  	<option value="no" {{ $data->coffee == 'no' ? 'selected' : '' }}>Not available</option>
+							  	<option value="yes" {{ $data->coffee == 'yes' ? 'selected' : '' }}>Available</option>
+							  </select>
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="toilet">Toilet</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-leaf"></i>
+							    </span>
+							  </div>
+							  <select name="toilet" class="form-control">
+							  	<option value="no" {{ $data->toilet == 'no' ? 'selected' : '' }}>Not available</option>
+							  	<option value="yes" {{ $data->toilet == 'yes' ? 'selected' : '' }}>Available</option>
+							  </select>
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="projector">Projector</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-television"></i>
+							    </span>
+							  </div>
+							  <select name="projector" class="form-control">
+							  	<option value="no" {{ $data->projector == 'no' ? 'selected' : '' }}>Not available</option>
+							  	<option value="yes" {{ $data->projector == 'yes' ? 'selected' : '' }}>Available</option>
+							  </select>
+							</div>
+				        </div>
+
 				        <div class="custom-control custom-checkbox mb-2">
 						  <input type="checkbox" class="custom-control-input" name="edit_image" value="1" id="edit_image" {{ old('edit_image') ? 'checked' : '' }}>
 						  <label class="custom-control-label" for="edit_image">Change image room</label>

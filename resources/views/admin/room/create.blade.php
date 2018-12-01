@@ -56,6 +56,91 @@
 				                </span>
 				            @endif
 				        </div>
+
+				        <div class="form-group">
+				            <label for="seats">Number of seats</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-hotel"></i>
+							    </span>
+							  </div>
+							  <input type="number" id="seats" class="form-control" name="seats" value="{{ old('seats') }}" placeholder="Number of seats available">
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="wifi">Wi-Fi</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-wifi"></i>
+							    </span>
+							  </div>
+							  <input type="number" id="wifi" class="form-control" name="wifi" value="{{ old('wifi') }}" placeholder="Leave it empty if false or input in Mbps">
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="ac">Air Conditioner</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-line-chart"></i>
+							    </span>
+							  </div>
+							  <select name="ac" class="form-control">
+							  	<option value="no">Not available</option>
+							  	<option value="yes">Available</option>
+							  </select>
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="coffee">Coffee</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-coffee"></i>
+							    </span>
+							  </div>
+							  <select name="coffee" class="form-control">
+							  	<option value="no">Not available</option>
+							  	<option value="yes">Available</option>
+							  </select>
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="toilet">Toilet</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-leaf"></i>
+							    </span>
+							  </div>
+							  <select name="toilet" class="form-control">
+							  	<option value="no">Not available</option>
+							  	<option value="yes">Available</option>
+							  </select>
+							</div>
+				        </div>
+
+				        <div class="form-group">
+				            <label for="projector">Projector</label>
+				            <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">
+							    	<i class="fa fa-television"></i>
+							    </span>
+							  </div>
+							  <select name="projector" class="form-control">
+							  	<option value="no">Not available</option>
+							  	<option value="yes">Available</option>
+							  </select>
+							</div>
+				        </div>
+
 				        <div class="form-group">
 				            <label for="image">Meeting room image</label>
 				            <input id="image" type="file" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="image">
