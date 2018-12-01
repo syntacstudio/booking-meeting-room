@@ -13,7 +13,8 @@ class PageController extends Controller
     public function welcome()
     {
     	$rooms = Room::inRandomOrder()
-    				->paginate(6);
+    				->limit(3)
+    				->get();
 
     	return view('welcome', compact('rooms'));
     }
