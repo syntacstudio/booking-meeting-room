@@ -26,7 +26,7 @@
     			<td>{{ $room->name }}</td>
     			<td>{{ $room->location }}</td>
     			<td>${{ $room->price }}</td>
-    			<td class="text-right">
+    			<td class="text-center">
     				<a href="{{ route('admin.room.edit', ['id' => $room->id]) }}" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a> 
     				<a onclick="return confirm('Are you sure?')" href="{{route('admin.room.destroy', $room->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a> 
     			</td>
