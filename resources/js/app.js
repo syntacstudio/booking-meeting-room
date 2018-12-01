@@ -36,6 +36,22 @@ function clearFeedback() {
 function clearAlert(){
     $('.alert-action').remove();
 }
+
+// bookingConfirmed
+function bookingConfirmed($data){
+	const $html = '<div class="confirmation d-flex align-items-center mb-4 bg-white rounded border py-4 px-3">'+
+            '<span class="icon">'+
+                '<i class="fa fa-check-circle fa-5x mr-3 text-success"></i>'+
+            '</span>'+
+            '<span>'+
+                '<p class="h5">Congratulations! Your meeting room booking is confirmed.</p>'+
+                '<a href="/invoice/'+ $data.number +'" target="_blank" class="btn btn-sm btn-primary">View Invoice</a> or <a href="/browse">Book more meeting room.</a>'+
+            '</span>'+
+        '</div>';
+    $('#booking-form').remove();
+    $('#booking-room .container').prepend($html);
+}
+
 //push alert
 function pushAlert( type, msg, wrapper ) {
     var html = '<div class="alert alert-'+ type +' alert-dismissible fade show alert-action" role="alert"> '+ msg +' <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>';
