@@ -15,11 +15,12 @@ class AdminController extends Controller
     public function index()
     {
     	$rooms 		= Room::get()->count();
-    	$bookings 	= Booking::get()->count();
+        $booking    = Booking::get()->count();
+    	$bookings 	= Booking::paginate(5);
     	$customers 	= User::whereHas('roles', function($query){
 					    		$query->where('name', 'customer');
 					    	})->count();
 
-        return view('admin.index', compact('rooms', 'bookings', 'customers'));
+        return view('admin.index', compact('rooms', 'bookings', 'booking', 'customers'));
     }
 }
