@@ -55,7 +55,7 @@ class RoomController extends Controller
 
         return redirect()
                     ->route('admin.rooms')
-                    ->with('success', 'Meetimg room has been added.');   
+                    ->with('success', 'Meeting room has been added.');   
     }
 
     /**
