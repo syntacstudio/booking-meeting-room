@@ -14,9 +14,21 @@ class AccountController extends Controller
     public function index()
     {
     	$customer = Auth::user();
-    	$bookings = $customer->bookings;
+    	$bookings = $customer->bookings()
+    						->orderBy('created_at', 'DESC')
+    						->paginate(10);
 
     	return view('account', compact('customer', 'bookings'));
+    }
+
+    /**
+     * View account settings
+     */
+    public function settings()
+    {	
+    	$customer = Auth::user();
+    	
+    	return view('account.settings', compact('customer'));
     }
 
 }

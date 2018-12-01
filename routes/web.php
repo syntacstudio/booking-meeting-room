@@ -31,6 +31,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 // routes for user
 Route::middleware(['auth', 'roles:customer'])->group(function () {
     Route::get('/account', 'AccountController@index')->name('account');
+    Route::get('/settings', 'AccountController@settings')->name('account.settings');
     
     Route::get('/booking/{permalink}', 'BookingController@create')->name('booking');
     Route::post('/booking/validation', 'BookingController@validation');
