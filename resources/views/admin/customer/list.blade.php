@@ -20,12 +20,12 @@
     		@foreach($data as $key => $user)
     		<tr>
                 <th>{{ $key+1 }}</th>
-                <th>{{ $user->name }}</th>
-                <th>{{ $user->email }}</th>
-                <th>{{ $user->bookings->count() }}</th>
-    			<th>{{ $user->created_at }}</th>
-    			<td class="text-right">
-    				<a href="#" class="btn btn-sm btn-secondary">
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->bookings->count() }}</td>
+    			<td>{{ $user->created_at }}</td>
+    			<td class="text-center">
+    				<a href="{{ route('admin.booking', $user->id) }}" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-secondary">
                         <i class="fa fa-trash"></i>
                     </a>
     			</td>

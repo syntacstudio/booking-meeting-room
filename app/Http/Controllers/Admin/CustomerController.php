@@ -20,4 +20,22 @@ class CustomerController extends Controller
 
         return view('admin.customer.list', compact('data'));
     }
+
+    /**
+     * Destroy users
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        foreach ($user->bookings as $item) {
+            $item->delete();
+        }
+
+        $user->delete();
+
+        return redirect()
+                    ->route('admin.customers')
+                    ->with('success', 'Customer has been removed.');  
+    }
 }
