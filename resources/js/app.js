@@ -1,4 +1,10 @@
 require('./bootstrap');
+
+// enable tooltip everywhere
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 // stripe key
 const stripeKey = $('meta[name=stripe]').attr('content');
 
@@ -96,4 +102,10 @@ booking_form.submit(function(e){
 		console.log($data);
 	});
 	
+});
+
+$('#print-invoice button').click(function(e){
+	e.preventDefault();
+	$(this).hide();
+	window.print();
 });
