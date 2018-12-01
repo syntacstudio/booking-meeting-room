@@ -30,7 +30,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 });
 
 // routes for user
-Route::middleware(['auth', 'roles:customer'])->group(function () {
+Route::middleware(['auth', 'roles:customer,admin'])->group(function () {
     Route::get('/account', 'AccountController@bookings')->name('account');
     Route::get('/settings', 'AccountController@settings')->name('account.settings');
     
