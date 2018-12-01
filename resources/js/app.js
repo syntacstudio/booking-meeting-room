@@ -32,6 +32,10 @@ function clearFeedback() {
 	$('.invalid-feedback strong').text('');
 }
 
+// clear alerts
+function clearAlert(){
+    $('.alert-action').remove();
+}
 //push alert
 function pushAlert( type, msg, wrapper ) {
     var html = '<div class="alert alert-'+ type +' alert-dismissible fade show alert-action" role="alert"> '+ msg +' <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>';
