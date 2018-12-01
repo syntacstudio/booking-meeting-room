@@ -9,16 +9,16 @@ use Auth;
 class AccountController extends Controller
 {
     /**
-     * View index of customer account page
+     * View index/bookings of customer account page
      */
-    public function index()
+    public function bookings()
     {
     	$customer = Auth::user();
     	$bookings = $customer->bookings()
     						->orderBy('created_at', 'DESC')
     						->paginate(10);
 
-    	return view('account', compact('customer', 'bookings'));
+    	return view('account.bookings', compact('customer', 'bookings'));
     }
 
     /**
@@ -27,7 +27,7 @@ class AccountController extends Controller
     public function settings()
     {	
     	$customer = Auth::user();
-    	
+
     	return view('account.settings', compact('customer'));
     }
 
