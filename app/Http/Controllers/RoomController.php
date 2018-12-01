@@ -11,11 +11,21 @@ class RoomController extends Controller
     /**
      * Browse meeting rooms page 
      */
-    public function browse()
+    public function browse(Request $request)
     {
-    	$rooms = Room::paginate(12);
 
-    	return view('browse', compact('rooms'));
+        $search = $request->get('search');
+
+        if($search){
+            $rooms = Room::where('name', 'LIKE', '%'.$search.'%')
+                            ->orWhere('location', 'LIKE', '%'.$search.'%')
+                            ->paginate(12);
+        } else {
+            $rooms = Room::paginate(12);
+        }
+    	
+
+    	return view('browse', compact('rooms', 'search'));
     }
 
     /**
