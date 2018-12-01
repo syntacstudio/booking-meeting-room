@@ -1,9 +1,10 @@
 @extends('layouts.default')
+@section('page.title', 'Reset Password')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-md-5 mt-2 height-fixer">
             <div class="card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
