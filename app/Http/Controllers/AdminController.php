@@ -20,6 +20,6 @@ class AdminController extends Controller
 					    		$query->where('name', 'customer');
 					    	})->count();
 
-        return view('admin', compact('rooms', 'bookings', 'customers'));
+        return view('admin.index', compact('rooms', 'bookings', 'customers'));
     }
 }
