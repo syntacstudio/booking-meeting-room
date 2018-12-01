@@ -22,7 +22,7 @@ class CreateBookingsTable extends Migration
             $table->string('end_date');
             $table->integer('day');
             $table->integer('total');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }
