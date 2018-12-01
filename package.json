@@ -19,7 +19,6 @@
         "popper.js": "^1.12"
     },
     "dependencies": {
-        "line-awesome": "^1.0.2",
-        "popper": "^1.0.1"
+        "line-awesome": "^1.0.2"
     }
 }
