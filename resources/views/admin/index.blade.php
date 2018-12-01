@@ -37,14 +37,30 @@
                     <i class="fa fa-file-text text-white fa-2x"></i>
                 </span>
                 <div>
-                    <p class="h5 m-0">{{ $bookings }} Booking{{ $bookings > 1 ? 's' : '' }}</p>
-                    <small class="text-muted">Booking{{ $bookings > 1 ? 's' : '' }} made.</small>
+                    <p class="h5 m-0">{{ $booking }} Booking{{ $booking > 1 ? 's' : '' }}</p>
+                    <small class="text-muted">Booking{{ $booking > 1 ? 's' : '' }} made.</small>
                 </div>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <h5 class="mb-3">Latest Booking:</h5>
+            <h5 class="mb-3 d-flex justify-content-between align-items-center">
+                Latest Booking:
+                <a href="{{ route('admin.bookings') }}" class="float-right mt-2">View All</a>
+            </h5>
+
+            <ul class="list-group">
+                @foreach ($bookings as $item)
+                    <li class="list-group-item">
+                        <small class="mr-2">{{ $item->created_at }}</small>
+                        <b>{{ $item->customer->name }}</b>
+                        <a href="{{ route('admin.booking', $item->id) }}" class="btn float-right btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title="View Booking" >
+                            <i class="fa fa-eye"></i>      
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
         </div>
     </div>
 </div>
