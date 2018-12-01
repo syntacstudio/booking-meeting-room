@@ -1,5 +1,8 @@
 require('./bootstrap');
 
+// import swal2
+const swal = require('sweetalert2');
+
 // enable tooltip everywhere
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
