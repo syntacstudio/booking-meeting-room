@@ -24,6 +24,8 @@ class BookingController extends Controller
      */
     public function detail($id)
     {
-    	return view('admin.booking.detail');
+        $data = Booking::find($id);
+
+    	return view('admin.booking.detail', compact('data'));
     }
 }

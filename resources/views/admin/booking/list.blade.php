@@ -28,8 +28,13 @@
     			<td>{{ $booking->created_at->format('Y/m/d') }}</td>
     			<td>{{ $booking->room->name }}</td>
     			<td>${{ $booking->total }}</td>
-    			<td class="text-right">
-    				
+    			<td class="text-center">
+                  <a href="{{ route('account.invoice', $booking->number) }}" target="_blank" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title="View Invoice" >
+                    <i class="fa fa-file"></i>      
+                  </a> 
+    		      <a href="{{ route('admin.booking', $booking->id) }}" class="btn btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title="View Booking" >
+                    <i class="fa fa-eye"></i>      
+                  </a>
     			</td>
     		</tr>
     		@endforeach
