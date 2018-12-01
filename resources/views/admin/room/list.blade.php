@@ -2,7 +2,7 @@
 @section('page.title', 'Rooms List')
 
 @section('content')
-<div class="container">
+<div class="container height-fixer">
 	@include('partially.alerts.success')
     <div class="h5 mb-4 ">
     	Rooms List: 

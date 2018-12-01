@@ -2,7 +2,7 @@
 @section('page.title', 'Dashboard')
 
 @section('content')
-<div class="container">
+<div class="container height-fixer">
     <div class="row">
         <div class="col-md-6">
             <h5 class="mb-3">Summary:</h5>

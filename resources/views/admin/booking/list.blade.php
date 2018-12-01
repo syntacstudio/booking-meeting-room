@@ -2,7 +2,7 @@
 @section('page.title', 'Bookings List')
 
 @section('content')
-<div class="container">
+<div class="container height-fixer">
     <h5 class="mb-3">Bookings List:</h5>
 
     <table class="table table-hover table-bordered">
