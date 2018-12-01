@@ -31,4 +31,14 @@ class AccountController extends Controller
     	return view('account.settings', compact('customer'));
     }
 
+    /**
+     * View Invoice
+     */
+    public function invoice($number)
+    {
+    	$data = Booking::where('number', $number)->first();
+
+    	return view('account.invoice', compact('data'));
+    }
+
 }
