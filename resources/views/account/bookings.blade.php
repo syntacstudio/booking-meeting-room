@@ -32,7 +32,7 @@
                                     <td>{{ $item->start_date->format('Y/m/d') }}</td>
                                     <td>{{ $item->day }}</td>
                                     <td class="text-center">
-                                        <a href="/account/booking/{{ $item->number }}" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
+                                        <a data-toggle="tooltip" data-placement="top" title="View Invoice" href="{{ route('account.invoice', $item->number) }}" target="_blank" class="btn btn-sm btn-secondary"><i class="fa fa-file"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
