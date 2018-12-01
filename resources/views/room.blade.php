@@ -7,14 +7,14 @@
     	<div class="row">
             <div class="col-md-4">
                 <img src="{{ asset('storage/rooms/'. $data->image) }}" alt="{{ $data->name }}" class="img-thumbnail">
-                <div class="d-flex mt-3 justify-content-between align-items-center">
+                <h1 class="h4 mb-0 mt-3">{{ $data->name }}</h1>
+                <p class="text-muted">{{ $data->location }}</p>
+                <div class="d-flex mt-3 justify-content-between align-items-center rounded border py-2 px-3">
                     <span class="h4 pt-2">${{ $data->price }} <span class="text-muted">/</span> Hour</span>
-                    <a href="{{ route('booking', $data->permalink) }}" class="btn btn-outline-primary">Book Now!</a>
+                    <a href="{{ route('booking', $data->permalink) }}" class="btn w-50 btn-primary">Book Now!</a>
                 </div>
             </div>
             <div class="col-md-8">
-                <h1 class="h4 mb-0">{{ $data->name }}</h1>
-                <p class="text-muted">{{ $data->location }}</p>
                 <article>
                     {!! nl2br($data->description) !!}
                 </article>
