@@ -5,8 +5,11 @@
 @include('partially.loading')
 <div id="booking-room">
     <div class="container py-5 mb-md-5">
+
       <form id="booking-form" data-room="{{ $data->permalink }}">
         @csrf
+
+        <div class="booking-alert"></div>
     	<div class="row">
             <div class="col-md-8">
                 <p class="h4 mb-3">Booking meeting room:</p>
