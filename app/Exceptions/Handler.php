@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Auth\AuthenticationException;
 
 class Handler extends ExceptionHandler
 {
@@ -48,4 +49,12 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+{
+    return $request->expectsJson()
+        ? response()->json(['message' => $exception->getMessage()], 401)
+        : redirect()->guest(route('login'))
+                    ->with('warning', 'You need to login before accessing this page.');
+}
 }
