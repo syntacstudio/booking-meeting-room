@@ -6,10 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-5 mt-md-4 mb-md-5">
             <h2 class="text-center">Login</h2>
-
+                @include('partially.alerts.warning')
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-
                     <div class="form-group">
                         <label for="email">E-Mail Address</label>
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="name@domain.com" required>
