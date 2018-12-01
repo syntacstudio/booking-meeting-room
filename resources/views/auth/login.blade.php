@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('page.title', 'Login')
 
 @section('content')
 <div class="container py-5">
