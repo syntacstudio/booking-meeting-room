@@ -15,7 +15,7 @@ Auth::routes();
 Route::middleware(['auth', 'roles:admin'])->group(function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
     Route::get('/admin/bookings', 'Admin\BookingController@index')->name('admin.bookings');
-    Route::get('/admin/booking/{$id}', 'Admin\BookingController@detail')->name('admin.booking');
+    Route::get('/admin/booking/{id}', 'Admin\BookingController@detail')->name('admin.booking');
 
     Route::get('/admin/rooms', 'Admin\RoomController@index')->name('admin.rooms');
     Route::get('/admin/room/create', 'Admin\RoomController@create')->name('admin.room.create');
@@ -23,6 +23,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
     Route::get('/admin/room/{id}/destroy', 'Admin\RoomController@destroy')->name('admin.room.destroy');
 
     Route::get('/admin/customers', 'Admin\CustomerController@index')->name('admin.customers');
+    Route::get('/admin/customer/{id}/destroy', 'Admin\CustomerController@destroy')->name('admin.customer.destroy');
 
     //post routes
     Route::post('/admin/room/{id}/update', 'Admin\RoomController@update')->name('admin.room.update');
