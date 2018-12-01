@@ -48,7 +48,13 @@ class RoomController extends Controller
         	'name' => $request->name,
         	'location' => $request->location,
         	'price' => $request->price,
-        	'description' => $request->description,
+            'description' => $request->description,
+            'seats' => $request->seats,
+            'wifi' => $request->wifi,
+            'ac' => $request->ac,
+            'coffee' => $request->coffee,
+            'toilet' => $request->toilet,
+        	'projector' => $request->projector,
         	'image' => $filename,
         	'permalink' => Room::createPermalink($request->name)
         ]);
@@ -92,6 +98,12 @@ class RoomController extends Controller
         $room->location     = $request->location;
         $room->price        = $request->price;
         $room->description  = $request->description;
+        $room->seats       = $request->seats;
+        $room->wifi         = $request->wifi;
+        $room->ac           = $request->ac;
+        $room->coffee       = $request->coffee;
+        $room->toilet       = $request->toilet;
+        $room->projector    = $request->projector;
 
         if($request->edit_image) {
             Storage::delete('/public/rooms' . $room->image);
