@@ -138,6 +138,49 @@ $('#print-invoice button').click(function(e){
 	$(this).hide();
 	window.print();
 });// change password
+/**
+ * Change profile
+ */
+const edit_profile = $('#edit-profile');
+
+edit_profile.submit(function(e){
+	e.preventDefault();
+
+	$('.loader').fadeIn();
+	clearFeedback();
+	$.ajax({
+		url: '/account/update',
+		type: 'POST',
+		dataType: 'JSON',
+		data: edit_profile.serialize(),
+	})
+	.done(function($data) {
+		if($data.errors){
+			$.each($data.errors, function(field, msg) {
+				pushFeedback(field, msg);
+			});
+		} else if($data.status == 'success'){
+			swal({
+			  title: 'Congratulation!',
+			  text: $data.msg,
+			  type: 'success',
+			  showCancelButton: false,
+			  confirmButtonColor: '#c61b1b'
+			}).then((result) => {
+				location.reload();
+			})
+		}
+	})
+	.fail(function() {
+		swal('Oops!', 'Failed to update your profile.', 'error');
+	})
+	.always(function() {
+		$('#editProfile').modal('toggle');
+		$('.loader').fadeOut(50);
+	});
+});
+
+// change password
 const change_password = $('#change-password');
 
 $('#start-change-password').click(function(e){
