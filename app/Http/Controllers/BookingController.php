@@ -109,6 +109,12 @@ class BookingController extends Controller
             $response = ['status' => 'Failed'];
         }
 
+        if( empty($errors) ){
+            return response()->json( $response );
+        } else {
+            return response()->json( ['errors' => $errors] );
+        }
+
     	return response()->json($response);
     }
 }
