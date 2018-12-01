@@ -120,6 +120,11 @@ textarea.form-control {
     }
 }
 
+// booking room
+#booking-room, .height-fixer {
+    min-height: 70vh;
+}
+
 // account
 .account-container {
     max-width: 980px;
@@ -149,7 +154,7 @@ textarea.form-control {
         }
     }
 
-    #change-password {
+    #password-wrapper button {
         padding: 0.7rem 0;
     }
 }
