@@ -60,7 +60,7 @@
             <tr>
                 <td>
                     {{ $data->room->name }}<br>
-                    <small class="text-muted">Meeting date: {{ $data->start_date }}</small>
+                    <small class="text-muted"><b>Meeting date:</b> {{ $data->start_date->format('Y/m/d') }}</small>
                 </td>
                 <td class="text-center align-middle">${{ $data->total / $data->day }}</td>
                 <td class="text-center align-middle">{{ $data->day }} day{{ $data->day > 1 ? 's' : '' }}</td>
