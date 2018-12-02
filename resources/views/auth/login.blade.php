@@ -2,7 +2,7 @@
 @section('page.title', 'Login')
 
 @section('content')
-<div class="container py-5">
+<div class="container height-fixer py-5">
     <div class="row justify-content-center">
         <div class="col-md-5 mt-md-4 mb-md-5">
             <h2 class="text-center">Login</h2>
@@ -32,11 +32,9 @@
 
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <div class="form-check mt-md-2">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">Remember Me</label>
-                            </div>
+                            <a class="btn btn-link pl-md-0" href="{{ route('password.request') }}">
+                                Forgot Your Password?
+                            </a>
                         </div>
                         <div class="col-md-6">
                             <button type="submit" class="btn btn-block btn-primary">
@@ -44,10 +42,8 @@
                             </button>
                         </div>
                     </div>
-                    <div class="form-group mt-md-5 mt-2 text-center">
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            Forgot Your Password?
-                        </a>
+                    <div class="form-group mt-md-5 mt-2 text-center border-top pt-3">
+                        Don't have an account? <a href="{{ route('register') }}">Register Now!</a>
                     </div>
                 </form>
             </div>
