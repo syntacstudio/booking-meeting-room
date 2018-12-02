@@ -51,6 +51,11 @@
                     </button>
                 </div>
             </form>
+
+
+            <div class="form-group mt-md-5 mt-2 text-center border-top pt-3">
+                Already have an account? <a href="{{ route('login') }}">Login</a>
+            </div>
         </div>
     </div>
 </div>
