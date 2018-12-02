@@ -19,9 +19,9 @@ class RoomController extends Controller
         if($search){
             $rooms = Room::where('name', 'LIKE', '%'.$search.'%')
                             ->orWhere('location', 'LIKE', '%'.$search.'%')
-                            ->paginate(12);
+                            ->paginate(6);
         } else {
-            $rooms = Room::paginate(12);
+            $rooms = Room::paginate(6);
         }
     	
 
