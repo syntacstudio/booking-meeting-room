@@ -47,7 +47,8 @@ function bookingConfirmed($data){
                 '<p class="h5">Congratulations! Your meeting room booking is confirmed.</p>'+
                 '<a href="/invoice/'+ $data.number +'" target="_blank" class="btn btn-sm btn-primary">View Invoice</a> or <a href="/browse">Book more meeting room.</a>'+
             '</span>'+
-        '</div>';
+        '</div>'+
+        '<p class="mt-3"><a href="/account"> Go to My Account</a></p>';
     $('#booking-form').remove();
     $('#booking-room .container').prepend($html);
 }
