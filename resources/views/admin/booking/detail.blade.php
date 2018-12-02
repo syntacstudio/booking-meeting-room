@@ -7,7 +7,7 @@
 	<div class="row justify-content-center">
         <div class="col-md-8">
         	<div class="page-header mb-3">
-        		<a href="{{ route('admin.bookings') }}" class="btn btn-secondary btn-sm mr-md-2">
+        		<a href="{{ URL::previous() }}" class="btn btn-secondary btn-sm mr-md-2">
 					<i class="fa fa-arrow-left"></i> Back
 				</a>
 				<span class="h5"><b>Booking Number:</b> {{ $data->number }}</span>
