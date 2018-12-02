@@ -2,7 +2,7 @@
 @section('page.title', 'Login')
 
 @section('content')
-<div class="container height-fixer py-5">
+<div class="container height-fixer py-5 mt-5">
     <div class="row justify-content-center">
         <div class="col-md-5 mt-md-4 mb-md-5">
             <h2 class="text-center">Login</h2>
