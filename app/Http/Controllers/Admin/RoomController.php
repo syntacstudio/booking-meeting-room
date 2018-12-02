@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Room;
+use App\Booking;
 use Storage;
+use Calendar;
+use Carbon\Carbon;
 
 class RoomController extends Controller
 {
@@ -132,5 +135,29 @@ class RoomController extends Controller
         return redirect()
                     ->route('admin.rooms')
                     ->with('success', 'Meetimg room has been deleted.');
+    }
+
+    /**
+     * Agenda meeting room
+     */
+    public function agenda($id)
+    {
+        $room   = Room::find($id);
+        $bookings = [];
+
+        foreach ($room->bookings as $key => $item) {
+            $bookings[] = Calendar::event(
+                $item->customer->name,
+                true,
+                new \DateTime($item->start_date),
+                new \DateTime($item->end_date),
+                $key,
+                [ 'url' => route('admin.booking', $item->id) ]
+            );
+        }
+
+        $calendar = Calendar::addEvents($bookings);
+
+        return view('admin.room.agenda', compact('calendar', 'room'));
     }
 }
