@@ -15,7 +15,8 @@
     			<th>#</th>
     			<th>Name</th>
     			<th>Location</th>
-    			<th>Price</th>
+                <th>Price</th>
+    			<th>Booked</th>
     			<th></th>
     		</tr>
     	</thead>
@@ -25,10 +26,12 @@
     			<th>{{ $key+1 }}</th>
     			<td>{{ $room->name }}</td>
     			<td>{{ $room->location }}</td>
-    			<td>${{ $room->price }}</td>
+                <td>${{ $room->price }}</td>
+    			<td>{{ $room->bookings()->count() }}</td>
     			<td class="text-center">
     				<a href="{{ route('admin.room.edit', ['id' => $room->id]) }}" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a> 
-    				<a onclick="return confirm('Are you sure?')" href="{{route('admin.room.destroy', $room->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a> 
+                    <a onclick="return confirm('Are you sure?')" href="{{route('admin.room.destroy', $room->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a> 
+    				<a href="{{route('admin.room.agenda', $room->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-calendar"></i></a> 
     			</td>
     		</tr>
     		@endforeach
