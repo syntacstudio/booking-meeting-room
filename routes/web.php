@@ -20,6 +20,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
     Route::get('/admin/room/create', 'Admin\RoomController@create')->name('admin.room.create');
     Route::get('/admin/room/{id}/edit/', 'Admin\RoomController@edit')->name('admin.room.edit');
     Route::get('/admin/room/{id}/destroy', 'Admin\RoomController@destroy')->name('admin.room.destroy');
+    Route::get('/admin/room/{id}/agenda', 'Admin\RoomController@agenda')->name('admin.room.agenda');
 
     Route::get('/admin/customers', 'Admin\CustomerController@index')->name('admin.customers');
     Route::get('/admin/customer/{id}/destroy', 'Admin\CustomerController@destroy')->name('admin.customer.destroy');
