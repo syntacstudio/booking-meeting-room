@@ -21,6 +21,14 @@ class Room extends Model
     }
 
     /**
+     * Get bookings data
+     */
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+    /**
      * @param $name
      * @param int $id
      * @return string
