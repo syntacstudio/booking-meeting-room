@@ -3,9 +3,12 @@ require('./bootstrap');
 // import swal2
 const swal = require('sweetalert2');
 
+// import fullcalendar
+const fullcalendar = require('fullcalendar');
+
 // enable tooltip everywhere
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
 })
 
 // stripe key
