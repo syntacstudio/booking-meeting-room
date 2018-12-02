@@ -7,7 +7,6 @@ Route::get('/', function() {
 Route::get('/', 'PageController@welcome' )->name('home');
 Route::get('/browse', 'RoomController@browse' )->name('browse');
 Route::get('/room/{permalink}', 'RoomController@detail' )->name('room');
-Route::get('/invoice/{number}', 'AccountController@invoice')->name('account.invoice');
 
 Auth::routes();
 
@@ -40,4 +39,5 @@ Route::middleware(['auth', 'roles:customer,admin'])->group(function () {
     Route::get('/booking/{permalink}', 'BookingController@create')->name('booking');
     Route::post('/booking/validation', 'BookingController@validation');
     Route::post('/booking/store', 'BookingController@store');
+    Route::get('/invoice/{number}', 'AccountController@invoice')->name('account.invoice');
 });
