@@ -4,7 +4,7 @@
 @section('content')
 <div class="container height-fixer">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h5 class="mb-3">Summary:</h5>
 
             <div class="card p-3 mb-2">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h5 class="mb-3 d-flex justify-content-between align-items-center">
                 Latest Booking:
                 <a href="{{ route('admin.bookings') }}" class="float-right mt-2">View All</a>
@@ -54,6 +54,7 @@
                     <li class="list-group-item">
                         <small class="mr-2">{{ $item->created_at->diffForHumans() }}</small>
                         <b>{{ $item->customer->name }}</b>
+                        <small>at {{ $item->room->name }}</small>
                         <a href="{{ route('admin.booking', $item->id) }}" class="btn float-right btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title="View Booking" >
                             <i class="fa fa-eye"></i>      
                         </a>
