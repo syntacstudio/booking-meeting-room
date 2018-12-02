@@ -15,10 +15,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <article>
-                    {!! nl2br($data->description) !!}
-                </article>
-                <div class="card mt-3">
+                <div class="card">
                     <div class="card-header">Facilities</div>
                     <div class="card-body">
                         <table class="table table-bordered">
@@ -50,6 +47,11 @@
                         </table>
                     </div>
                 </div>
+
+
+                <article class="mt-3">
+                    {!! nl2br($data->description) !!}
+                </article>
             </div>
         </div>
     </div>
