@@ -52,7 +52,7 @@
             <ul class="list-group">
                 @foreach ($bookings as $item)
                     <li class="list-group-item">
-                        <small class="mr-2">{{ $item->created_at }}</small>
+                        <small class="mr-2">{{ $item->created_at->diffForHumans() }}</small>
                         <b>{{ $item->customer->name }}</b>
                         <a href="{{ route('admin.booking', $item->id) }}" class="btn float-right btn-sm btn-secondary" data-toggle="tooltip" data-placement="top" title="View Booking" >
                             <i class="fa fa-eye"></i>      
