@@ -166,7 +166,10 @@ class RoomController extends Controller
             );
         }
 
-        $calendar = Calendar::addEvents($bookings);
+        $calendar = Calendar::addEvents($bookings)
+                            ->setCallbacks([
+                                'themeSystem' => '"bootstrap4"'
+                            ]);;
 
         return view('admin.room.agenda', compact('calendar', 'room'));
     }
