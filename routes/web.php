@@ -36,6 +36,7 @@ Route::middleware(['auth', 'roles:customer,admin'])->group(function () {
     Route::post('/account/update', 'AccountController@update')->name('account.update');
     Route::post('/account/update/password', 'AccountController@updatePassword')->name('account.updatePassword');
     Route::get('/settings', 'AccountController@settings')->name('account.settings');
+    Route::get('/agenda', 'AccountController@agenda')->name('account.agenda');
     
     Route::get('/booking/{permalink}', 'BookingController@create')->name('booking');
     Route::post('/booking/validation', 'BookingController@validation');

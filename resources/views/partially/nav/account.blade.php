@@ -4,6 +4,9 @@
                 <a class="nav-link {{ active_nav('account') }}" href="{{ route('account') }}">BOOKINGS</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link {{ active_nav('account.agenda') }}" href="{{ route('account.agenda') }}">AGENDA</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link {{ active_nav('account.settings') }}" href="{{ route('account.settings') }}">SETTINGS</a>
               </li>
               <li class="nav-item">
