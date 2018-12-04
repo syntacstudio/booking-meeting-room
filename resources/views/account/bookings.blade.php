@@ -2,7 +2,7 @@
 @section('page.title', 'My Account')
 
 @section('content')
-<div class="account-container mx-auto py-md-5 py-3 mb-5">
+<div class="account-container height-fixer mx-auto py-md-5 py-3 mb-5">
     <div class="row">
         <div class="col-md-2">
             @include('partially.nav.account')
