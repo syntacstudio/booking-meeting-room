@@ -139,4 +139,17 @@ class AccountController extends Controller
         return view('account.agenda', compact('calendar'));
     }
 
+    /**
+     * Get order details
+     */
+    public function detail($number)
+    {   
+        $data = Auth::user()
+                    ->bookings
+                    ->where('number', $number)
+                    ->first();
+                    
+        return view('account.booking', compact('data'));
+    }
+
 }

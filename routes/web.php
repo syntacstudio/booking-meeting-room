@@ -41,5 +41,6 @@ Route::middleware(['auth', 'roles:customer,admin'])->group(function () {
     Route::get('/booking/{permalink}', 'BookingController@create')->name('booking');
     Route::post('/booking/validation', 'BookingController@validation');
     Route::post('/booking/store', 'BookingController@store');
+    Route::get('/order/{number}', 'AccountController@detail')->name('account.booking.detail');
     Route::get('/invoice/{number}', 'AccountController@invoice')->name('account.invoice');
 });

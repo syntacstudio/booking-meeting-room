@@ -50,12 +50,9 @@
                                 <label for="day">Number of Day</label>
                                 <input id="day" type="number" min="1" class="form-control" name="day" value="1" placeholder="Date">
                             </div>
-                            <div class="col-md-12">
-                                <span class="invalid-feedback" id="day-feedback">
-                                    <strong></strong>
-                                <span class="invalid-feedback" id="date-feedback">
-                                    <strong></strong>
-                                </span>
+                            <div class="form-group col-md-12">
+                                <span class="invalid-feedback" id="day-feedback"><strong></strong>
+                                <span class="invalid-feedback" id="date-feedback"><strong></strong></span>
                             </div>
                         </div>
 
