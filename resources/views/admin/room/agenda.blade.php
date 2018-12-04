@@ -3,15 +3,19 @@
 
 @section('content')
 <div class="container height-fixer">
-    <div class="page-header mb-3">
-        <a href="{{ route('admin.rooms') }}" class="btn btn-secondary btn-sm mr-md-2">
-            <i class="fa fa-arrow-left"></i> Back
-        </a>
-        <span class="h5"><b>Agenda:</b> {{ $room->name }}</span>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            {!! $calendar->calendar() !!}
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <div class="page-header mb-3">
+                <a href="{{ route('admin.rooms') }}" class="btn btn-secondary btn-sm mr-md-2">
+                    <i class="fa fa-arrow-left"></i> Back
+                </a>
+                <span class="h5"><b>Agenda:</b> {{ $room->name }}</span>
+            </div>
+            <div class="card row">
+                <div class="card-body">
+                    {!! $calendar->calendar() !!}
+                </div>
+            </div>
         </div>
     </div>
 </div>
