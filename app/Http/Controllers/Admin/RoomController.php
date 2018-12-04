@@ -145,14 +145,24 @@ class RoomController extends Controller
         $room   = Room::find($id);
         $bookings = [];
 
-        foreach ($room->bookings as $key => $item) {
+        foreach($room->bookings as $key => $item) {
+
+            if($item->end_date > Carbon::now()){
+                $color = '#3a87ad';
+            } else {
+                $color = '#800';
+            }
+
             $bookings[] = Calendar::event(
                 $item->customer->name,
                 true,
-                new \DateTime($item->start_date),
-                new \DateTime($item->end_date),
+                Carbon::parse($item->start_date)->format('y-m-d'),
+                Carbon::parse($item->end_date)->format('y-m-d'),
                 $key,
-                [ 'url' => route('admin.booking', $item->id) ]
+                [
+                    'url' => route('admin.booking', $item->id),
+                    'color' => $color
+                ]
             );
         }
 
