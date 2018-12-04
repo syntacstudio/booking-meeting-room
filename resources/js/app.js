@@ -27,12 +27,14 @@ $('input[name="edit_image"]').on('click', function(){
 function pushFeedback(field, msg) {
 	$('#'+field).addClass('is-invalid');
 	$('#'+field+'-feedback').text(msg);
+	$('.invalid-feedback').fadeIn();
 }
 
 // clear field feedback
 function clearFeedback() {
 	$('.form-control').removeClass('is-invalid');
 	$('.invalid-feedback strong').text('');
+	$('.invalid-feedback').fadeOut();
 }
 
 // clear alerts
@@ -90,6 +92,7 @@ booking_form.submit(function(e){
 		data: booking_form.serialize()+'&permalink='+booking_form.data('room'),
 	})
 	.done(function($data) {
+		console.log($data);
 		if($data.errors){
 			$.each($data.errors, function(field, msg) {
 				pushFeedback(field, msg);

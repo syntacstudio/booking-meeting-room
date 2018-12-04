@@ -45,14 +45,15 @@
                             <div class="form-group col-md-4">
                                 <label for="date">Date of Meeting</label>
                                 <input id="date" type="date" min='{{ date('Y-m-d') }}' class="form-control" name="date" value="{{ date('Y-m-d') }}" placeholder="Date of Meeting">
-                                <span class="invalid-feedback" id="date-feedback">
-                                    <strong></strong>
-                                </span>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="day">Number of Day</label>
                                 <input id="day" type="number" min="1" class="form-control" name="day" value="1" placeholder="Date">
-                               <span class="invalid-feedback" id="day-feedback">
+                            </div>
+                            <div class="col-md-12">
+                                <span class="invalid-feedback" id="day-feedback">
+                                    <strong></strong>
+                                <span class="invalid-feedback" id="date-feedback">
                                     <strong></strong>
                                 </span>
                             </div>

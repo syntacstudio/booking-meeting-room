@@ -39,15 +39,28 @@ class BookingController extends Controller
         {
             $response = [ 'status' => 'error', 'errors' => $validator->errors() ];            
         } else {
-        	$room 	= Room::where('permalink', $request->permalink)->first();
-        	$email 	= Auth::user()->email;
+        	$room = Room::where('permalink', $request->permalink)
+                        ->first();
 
-            $response = [ 
-            	'status' => 'valid', 
-            	'msg' => 'Data validated.', 
-            	'room' => $room, 
-            	'email' => $email 
-            ];
+            $booked = Booking::where('room_id', $room->id)
+                ->whereDate('start_date', '<=', Carbon::parse($request->date))
+                ->whereDate('end_date', '>=', Carbon::parse($request->date)->addDays($request->day - 1))
+                ->count();
+
+            if($booked > 0){
+                $response = [ 'status' => 'error', 'errors' => ['date' => 'Meeting room not available in this date, please try another date or meeting room.'] ];  
+            } else {
+                $email  = Auth::user()->email;
+                $response = [ 
+                    'status' => 'valid', 
+                    'msg' => 'Data validated.', 
+                    'room' => $room, 
+                    'email' => $email,
+                    'booked' => $booked
+                ];
+            }
+
+        	
         }
 
     	return response()->json($response);
